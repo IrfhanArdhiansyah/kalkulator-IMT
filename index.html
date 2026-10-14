@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hitung Indeks Massa Tubuh dan ketahui kategorinya.">
+    <title>Kalkulator IMT | Indeks Massa Tubuh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-shell">
+        <div class="experience-layout">
+            <section class="imt-card" aria-labelledby="page-title">
+            <header class="app-header">
+                <div class="brand-icon" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div>
+                    <p class="eyebrow">Health check</p>
+                    <h1 id="page-title">Kalkulator IMT</h1>
+                </div>
+                <span class="pulse-dot" aria-label="Aplikasi aktif"></span>
+            </header>
+
+            <div class="intro">
+                <h2>Kenali kondisi tubuhmu</h2>
+                <p>Masukkan berat dan tinggi badan untuk mengetahui indeks massa tubuh.</p>
+            </div>
+
+            <form id="imt-form" novalidate>
+                <div class="form-grid">
+                    <label class="field">
+                        <span>Berat badan</span>
+                        <div class="input-wrap">
+                            <input id="weight" name="weight" type="number" min="1" max="500" step="0.1" placeholder="0" required>
+                            <strong>kg</strong>
+                        </div>
+                    </label>
+                    <label class="field">
+                        <span>Tinggi badan</span>
+                        <div class="input-wrap">
+                            <input id="height" name="height" type="number" min="1" max="300" step="0.1" placeholder="0" required>
+                            <strong>cm</strong>
+                        </div>
+                    </label>
+                </div>
+                <p class="error-message" id="error-message" role="alert"></p>
+                <button class="calculate-button" type="submit">
+                    <span>Hitung IMT</span>
+                    <span aria-hidden="true">&rarr;</span>
+                </button>
+            </form>
+
+            <section class="result-panel" id="result-panel" aria-live="polite">
+                <div class="result-heading">
+                    <span>Hasil perhitungan</span>
+                    <span class="result-badge" id="result-badge">-</span>
+                </div>
+                <div class="result-main">
+                    <strong id="imt-value">--</strong>
+                    <span>kg/m&sup2;</span>
+                </div>
+                <p class="result-description" id="result-description">Hasil IMT kamu akan muncul di sini.</p>
+                <div class="scale" aria-label="Rentang kategori IMT">
+                    <div class="scale-bar">
+                        <span class="scale-low" data-scale-category="underweight"></span>
+                        <span class="scale-ideal" data-scale-category="ideal"></span>
+                        <span class="scale-high" data-scale-category="overweight"></span>
+                        <span class="scale-obese" data-scale-category="obese"></span>
+                        <span class="scale-marker" id="scale-marker" aria-hidden="true"></span>
+                    </div>
+                    <div class="scale-labels">
+                        <span>Kurang</span>
+                        <span>Ideal</span>
+                        <span>Berlebih</span>
+                        <span>Obesitas</span>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="card-footer">
+                <span class="info-icon" aria-hidden="true">i</span>
+                <p>IMT adalah indikator umum, bukan diagnosis medis.</p>
+            </footer>
+            </section>
+
+            <aside class="visual-panel" aria-label="Panduan kesehatan dan rentang IMT">
+                <div class="visual-copy">
+                    <p class="eyebrow">Your health, in balance</p>
+                    <h2>Kenali angka, rawat tubuhmu.</h2>
+                    <p>IMT membantu membaca gambaran umum kondisi berat badan berdasarkan tinggi badan.</p>
+                </div>
+
+                <div class="health-illustration" aria-hidden="true">
+                    <div class="illustration-ring"></div>
+                    <div class="body-figure">
+                        <span class="figure-head"></span>
+                        <span class="figure-torso"></span>
+                        <span class="figure-arm figure-arm--left"></span>
+                        <span class="figure-arm figure-arm--right"></span>
+                        <span class="figure-leg figure-leg--left"></span>
+                        <span class="figure-leg figure-leg--right"></span>
+                    </div>
+                    <span class="orbit-dot orbit-dot--one"></span>
+                    <span class="orbit-dot orbit-dot--two"></span>
+                </div>
+
+                <div class="visual-scale">
+                    <div class="visual-scale__header">
+                        <span>Rentang IMT dewasa</span>
+                        <span>kg/m&sup2;</span>
+                    </div>
+                    <div class="visual-scale__row"><span class="scale-swatch scale-swatch--low"></span><span>Kurang</span><strong>&lt; 18,5</strong></div>
+                    <div class="visual-scale__row"><span class="scale-swatch scale-swatch--ideal"></span><span>Ideal</span><strong>18,5 - 24,9</strong></div>
+                    <div class="visual-scale__row"><span class="scale-swatch scale-swatch--high"></span><span>Berlebih</span><strong>25 - 29,9</strong></div>
+                    <div class="visual-scale__row"><span class="scale-swatch scale-swatch--obese"></span><span>Obesitas</span><strong>&ge; 30</strong></div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
